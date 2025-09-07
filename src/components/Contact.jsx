@@ -1,12 +1,30 @@
-import { useState } from "react";
+import { useState, useRef } from "react"; 
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const form = useRef();
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
+
+    emailjs
+      .sendForm(
+        "service_twp2vgv", 
+        "template_vsphv2l",
+        form.current,
+        { publicKey: "XWsVf16ClOSpG_Zkm" }
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          setIsSubmitted(true);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   return (
@@ -22,10 +40,10 @@ const ContactForm = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl sm:text-4xl font-bold text-center mb-4"
         >
-          Get in Touch With Me
+          Get in Touch With Us
         </motion.h2>
 
-        {/* <motion.p
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -34,31 +52,30 @@ const ContactForm = () => {
         >
           We design interactive experiences for brands and startups. Tell us a
           bit about your project and we’ll reach out soon.
-        </motion.p> */}
+        </motion.p>
 
         <AnimatePresence mode="wait">
           {!isSubmitted ? (
             <motion.form
               key="form"
-              onSubmit={handleSubmit}
+              ref={form}
+              onSubmit={sendEmail}
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
               className="bg-[#0a0a0a]/80 backdrop-blur p-6 sm:p-8 rounded-2xl shadow-lg space-y-6"
             >
-              {/* Name + Email row on md+ */}
+              {/* Name + Email row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div whileHover={{ scale: 1.02 }}>
-                  <label
-                    htmlFor="name"
-                    className="block text-neutral-300 mb-2"
-                  >
+                  <label htmlFor="name" className="block text-neutral-300 mb-2">
                     Name
                   </label>
                   <motion.input
                     whileFocus={{ scale: 1.02, boxShadow: "0 0 10px #fff3" }}
                     id="name"
+                    name="name"
                     type="text"
                     required
                     placeholder="Enter your name"
@@ -67,15 +84,13 @@ const ContactForm = () => {
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.02 }}>
-                  <label
-                    htmlFor="email"
-                    className="block text-neutral-300 mb-2"
-                  >
+                  <label htmlFor="email" className="block text-neutral-300 mb-2">
                     Email
                   </label>
                   <motion.input
                     whileFocus={{ scale: 1.02, boxShadow: "0 0 10px #fff3" }}
                     id="email"
+                    name="user_email"
                     type="email"
                     required
                     placeholder="Enter your email"
@@ -85,15 +100,13 @@ const ContactForm = () => {
               </div>
 
               <motion.div whileHover={{ scale: 1.02 }}>
-                <label
-                  htmlFor="phone"
-                  className="block text-neutral-300 mb-2"
-                >
+                <label htmlFor="phone" className="block text-neutral-300 mb-2">
                   Phone Number
                 </label>
                 <motion.input
                   whileFocus={{ scale: 1.02, boxShadow: "0 0 10px #fff3" }}
                   id="phone"
+                  name="phone"
                   type="tel"
                   placeholder="Enter your phone number"
                   className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-white"
@@ -101,15 +114,13 @@ const ContactForm = () => {
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.01 }}>
-                <label
-                  htmlFor="message"
-                  className="block text-neutral-300 mb-2"
-                >
+                <label htmlFor="message" className="block text-neutral-300 mb-2">
                   Message
                 </label>
                 <motion.textarea
                   whileFocus={{ scale: 1.01, boxShadow: "0 0 10px #fff3" }}
                   id="message"
+                  name="message"
                   rows="4"
                   required
                   placeholder="Write your message here..."
@@ -123,7 +134,7 @@ const ContactForm = () => {
                 whileTap={{ scale: 0.95, rotate: 0 }}
                 className="w-full bg-gradient-to-r from-white to-neutral-300 text-black py-3 rounded-lg font-semibold transition shadow-md hover:shadow-xl"
               >
-                 Send Message
+                Send Message
               </motion.button>
             </motion.form>
           ) : (
@@ -139,24 +150,13 @@ const ContactForm = () => {
               exit={{ opacity: 0 }}
               className="bg-white-600/90 p-10 rounded-2xl shadow-lg text-center relative overflow-hidden"
             >
-              {/* Floating animation */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="absolute inset-0 pointer-events-none"
-              >
-                {/* <div className="absolute inset-x-0 top-0 flex justify-center text-5xl">
-                  
-                </div> */}
-              </motion.div>
-
               <motion.h3
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className="text-2xl font-bold mb-2"
               >
-                 Thank You for Contacting Us!
+                Thank You for Contacting Us!
               </motion.h3>
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
@@ -175,6 +175,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-
-// 🚀  🎉  for the later use , if you want to add these imojis
