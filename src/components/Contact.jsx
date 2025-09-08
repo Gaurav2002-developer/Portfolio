@@ -40,7 +40,7 @@ const ContactForm = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl sm:text-4xl font-bold text-center mb-4"
         >
-          Get in Touch With Us
+          Get in Touch With Me
         </motion.h2>
 
         <motion.p
@@ -50,8 +50,7 @@ const ContactForm = () => {
           transition={{ delay: 0.1, duration: 0.5 }}
           className="text-center text-neutral-400 mb-10 max-w-2xl mx-auto"
         >
-          We design interactive experiences for brands and startups. Tell us a
-          bit about your project and we’ll reach out soon.
+          Or share your brilliant ideas from your extraordinary mind with me.
         </motion.p>
 
         <AnimatePresence mode="wait">
@@ -156,16 +155,16 @@ const ContactForm = () => {
                 transition={{ delay: 0.3 }}
                 className="text-2xl font-bold mb-2"
               >
-                Thank You for Contacting Us!
+                I will reach you soon !
               </motion.h3>
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 className="text-white/90"
               >
-                We will reach you soon 
-              </motion.p>
+                ....................
+              </motion.p> */}
             </motion.div>
           )}
         </AnimatePresence>

@@ -5,6 +5,7 @@ const experiences = [
   {
     role: "Data Engineer",
     company: "Tackit Analytics",
+    time: "May 2025 – Aug 2025",
     points: [
       "Contributing to the backend pipeline of a Bowlers' Academy project aimed at tracking and analyzing cricket deliveries using sensor and video data.",
       "Gained hands-on experience with AWS services (EC2, S3, SageMaker) for scalable data handling and machine learning integration.",
@@ -14,6 +15,7 @@ const experiences = [
   {
     role: "Python Developer",
     company: "Octanet Services",
+    time: "Sep 2024 – Oct 2024",
     points: [
       "Developed 5+ projects using NumPy and Pandas, improving data processing by 20%.",
       "Applied Python for automating tasks, enhancing workflow efficiency.",
@@ -25,6 +27,7 @@ const experiences = [
   {
     role: "Web Developer",
     company: "CodSoft",
+    time: "Mar 2024 – May 2024",
     points: [
       "Deployed 5+ websites using HTML, CSS, and JavaScript, ensuring responsive, user-centric designs.",
       "Boosted user engagement by 25% through intuitive layouts.",
@@ -41,7 +44,6 @@ const cardVariants = {
     y: 0,
     transition: { duration: 0.6, delay: i * 0.15, ease: "easeOut" },
   }),
-  
 };
 
 const Experience = () => {
@@ -72,23 +74,35 @@ const Experience = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="bg-[#0a0a0a] border border-white/20 rounded-2xl shadow-lg p-8 flex flex-col text-left transition-all duration-300"
+              whileHover={{ y: -10, scale: 1.03, boxShadow: "0px 10px 25px rgba(0,0,0,0.4)" }}
+              className="bg-[#0a0a0a] border border-white/20 rounded-2xl shadow-lg p-8 flex flex-col text-left transition-all duration-300 relative"
             >
               {/* Role & Company */}
               <div className="flex items-center gap-3 mb-4">
                 <Briefcase className="w-6 h-6 text-blue-400" />
                 <h3 className="text-xl font-semibold">
-                  {exp.role} <span className="text-neutral-400">| {exp.company}</span>
+                  {exp.role}{" "}
+                  <span className="text-neutral-400">| {exp.company}</span>
                 </h3>
               </div>
 
               {/* Experience Points */}
-              <ul className="list-disc list-inside space-y-2 text-neutral-300 text-sm leading-relaxed">
+              <ul className="list-disc list-inside space-y-2 text-neutral-300 text-sm leading-relaxed mb-12">
                 {exp.points.map((point, idx) => (
                   <li key={idx}>{point}</li>
                 ))}
               </ul>
+
+              {/* Time at Bottom Center */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm font-medium text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full shadow-md"
+              >
+                {exp.time}
+              </motion.div>
             </motion.div>
           ))}
         </div>

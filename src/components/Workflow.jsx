@@ -3,6 +3,13 @@ import { Github } from "lucide-react";
 import { useState } from "react";
 
 const projects = [
+
+  {
+  name: "Freelix",
+  link: "https://github.com/Gaurav2002-developer/Freelix",
+  tech: ["Supabase", "Python", "Django", "SQL", "Postgres", "React", "CSS"],
+  idea: "A free movies website built using Supabase, Python, Django, SQL, Postgres, and React with a clean UI and smooth functionality.",
+  },
   {
     name: "Search Engine (GetLP)",
     link: "https://github.com/Gaurav2002-developer/GetLP",
@@ -18,40 +25,40 @@ const projects = [
 
   {
     name: "Plagiarism Checker (NLP)",
-    link: "https://github.com/Gaurav2002-developer/PlagiarismChecker",
+    link: "https://github.com/Gaurav2002-developer/Plagiarism-Checker",
     tech: ["Python", "NLTK", "Scikit-learn", "Pandas"],
     idea: "Detects plagiarism in text documents using NLP techniques and machine learning models. Helps ensure originality in academic and professional writing.",
   },
   {
     name: "Language Detection & Translation Tool",
-    link: "https://github.com/Gaurav2002-developer/Language-Detection-Translation",
+    link: "https://github.com/Gaurav2002-developer/Language-Detection-and-Translation-Tool",
     tech: ["Python", "Flask", "NLTK", "Google Translator API"],
     idea: "Automatically detects input language and translates it into the desired target language. Useful for multilingual communication and learning.",
   },
   {
     name: "Diabetes Prediction",
-    link: "https://github.com/Gaurav2002-developer/DiabetesPrediction",
+    link: "https://github.com/Gaurav2002-developer/Diabetes-Prediction",
     tech: ["Python", "Flask", "Pickle", "Machine Learning"],
     idea: "A prediction system that uses patient health data and ML algorithms to determine the likelihood of diabetes, supporting early healthcare decisions.",
   },
-  {
-    name: "Connect - Social Media App",
-    link: "https://github.com/Gaurav2002-developer/Connect",
-    tech: ["React", "JavaScript", "HTML", "CSS"],
-    idea: "A social media application where users can connect globally, share posts, and interact. Focused on building community engagement.",
-  },
- {
-  name: "Freelix",
-  link: "https://github.com/Gaurav2002-developer/Freelix",
-  tech: ["Supabase", "Python", "Django", "SQL", "Postgres", "React", "CSS"],
-  idea: "A free movies website built using Supabase, Python, Django, SQL, Postgres, and React with a clean UI and smooth functionality.",
-},
+  // {
+  //   name: "Connect - Social Media App",
+  //   link: "https://github.com/Gaurav2002-developer/Social_handler",
+  //   tech: ["React", "JavaScript", "HTML", "CSS"],
+  //   idea: "A social media application where users can connect globally, share posts, and interact. Focused on building community engagement.",
+  // },
   {
   name: "Python Sorting Visualizer",
   link: "https://github.com/Gaurav2002-developer/Python-Sorting-Visualizer",
   tech: ["Python", "Pygame"],
   idea: "An interactive sorting visualizer built using Python and Pygame, demonstrating algorithms like Insertion Sort and Bubble Sort through engaging visual animations.",
 },
+ {
+    name: "Connect - Social Media App",
+    link: "https://github.com/Gaurav2002-developer/Social_handler",
+    tech: ["React", "JavaScript", "HTML", "CSS"],
+    idea: "A social media application where users can connect globally, share posts, and interact. Focused on building community engagement.",
+  },
 {
   name: "Shopkart",
   link: "https://github.com/Gaurav2002-developer/Shopkart",

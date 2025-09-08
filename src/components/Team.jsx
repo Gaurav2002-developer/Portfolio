@@ -3,29 +3,47 @@ import { motion } from "framer-motion";
 // Skill categories
 const skillsData = [
   {
-    category: "Programming Languages",
-    skills: ["Python", "JavaScript", "PHP"],
-  },
-  {
-    category: "Data Analysis & ML",
-    skills: ["NumPy", "Pandas", "Power BI", "Matplotlib", "Scikit-learn", "Statistics", "Joblib"],
-  },
-  {
-    category: "Frontend Technologies",
-    skills: ["HTML", "React", "Tailwind CSS", "Bootstrap"],
-  },
-  {
-    category: "Backend & Frameworks",
-    skills: ["Django", "Flask", "SQL"],
-  },
-  {
-    category: "Productivity Tools",
-    skills: ["MS Word", "PowerPoint", "Git", "GitHub"],
-  },
-  {
-    category: "Soft Skills",
-    skills: ["Communication", "Leadership", "Teamwork", "Problem Solving"],
-  },
+  category: "Programming Languages",
+  skills: ["Python", "JavaScript", "PHP"],
+},
+{
+  category: "Data Science & ML",
+  skills: [
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "Scikit-learn",
+    "Statistics",
+    "Joblib",
+    "Pickle",
+    "OpenCV"
+  ],
+},
+{
+  category: "Frontend Technologies",
+  skills: ["HTML", "React", "Tailwind CSS", "Framer Motion","Bootstrap"],
+},
+{
+  category: "Backend & Frameworks",
+  skills: ["Django", "Flask", "Streamlit", "Supabase"],
+},
+{
+  category: "Databases",
+  skills: ["SQL", "PostgreSQL", "NoSQL"],
+},
+{
+  category: "Deployment & Version Control",
+  skills: ["Vercel", "Git", "GitHub"],
+},
+{
+  category: "Productivity Tools",
+  skills: ["MS Word", "PowerPoint", "Excel", "Canva", "PowerBI"],
+},
+{
+  category: "Soft Skills",
+  skills: ["Communication", "Leadership", "Teamwork", "Problem Solving"],
+},
+
 ];
 
 const cardVariants = {

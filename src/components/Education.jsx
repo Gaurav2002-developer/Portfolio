@@ -6,7 +6,7 @@ const educationData = [
     institution: "Amity University",
     cgpa: "7.2/10",
     activities: ["Core Head – Odyssey", "Decoration Committee", "Football", "Cricket", "Event Participation"],
-    duration: "06/2025 – present",
+    duration: "08/2021-06/2025",
     location: "Jaipur, India",
   },
   {
