@@ -7,13 +7,13 @@ const projects = [
   {
   name: "Stock-Price-Prediction",
   link: "https://github.com/Gaurav2002-developer/Apple-Stock-Price-Prediction",
-  tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn"],
+  tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", 'Statistics' , 'Time Series Forecasting'],
   idea: "The primary objective of this project is to develop a predictive model that forecasts Apple stock prices for the next 30 days using historical stock data from 2012 to 2019. The model assists investors, traders, and analysts in making informed decisions based on market trends.",
 },
 {
   name: "Amazon-Web-Scraping-Selenium",
   link: "https://github.com/Gaurav2002-developer/Amazon-Web-Scraping-Selenium-",
-  tech: ["Python", "BeautifulSoup", "Selenium", "CSV"],
+  tech: ["Python", "BeautifulSoup", "Selenium", "Pandas"],
   idea: "A Python-based web scraping project that extracts speaker details such as title, price, and product links from Amazon using BeautifulSoup and Selenium, and stores the data in CSV format for further analysis.",
 },
 {
@@ -38,7 +38,7 @@ const projects = [
   },
   {
     name: "Search Engine (GetLP)",
-    link: "https://github.com/Gaurav2002-developer/GetLP",
+    link: "https://github.com/Gaurav2002-developer/ML-Projects/tree/main/GetLP",
     tech: ["Python", "Flask", "RapidFuzz", "LLMs"],
     idea: "A search engine built to assist students in preparing for placements. Uses AI concepts like RapidFuzz and LLMs to provide smarter, context-aware results.",
   },
@@ -51,19 +51,19 @@ const projects = [
 
   {
     name: "Plagiarism Checker (NLP)",
-    link: "https://github.com/Gaurav2002-developer/Plagiarism-Checker",
+    link: "https://github.com/Gaurav2002-developer/ML-Projects/tree/main/Plagiarism-Checker",
     tech: ["Python", "NLTK", "Scikit-learn", "Pandas"],
     idea: "Detects plagiarism in text documents using NLP techniques and machine learning models. Helps ensure originality in academic and professional writing.",
   },
   {
     name: "Language Detection & Translation Tool",
-    link: "https://github.com/Gaurav2002-developer/Language-Detection-and-Translation-Tool",
+    link: "https://github.com/Gaurav2002-developer/ML-Projects/tree/main/Language-Detection-and-Translation-Tool",
     tech: ["Python", "Flask", "NLTK", "Google Translator API"],
     idea: "Automatically detects input language and translates it into the desired target language. Useful for multilingual communication and learning.",
   },
   {
     name: "Diabetes Prediction",
-    link: "https://github.com/Gaurav2002-developer/Diabetes-Prediction",
+    link: "https://github.com/Gaurav2002-developer/ML-Projects/tree/main/Diabetes-Prediction",
     tech: ["Python", "Flask", "Pickle", "Machine Learning"],
     idea: "A prediction system that uses patient health data and ML algorithms to determine the likelihood of diabetes, supporting early healthcare decisions.",
   },
