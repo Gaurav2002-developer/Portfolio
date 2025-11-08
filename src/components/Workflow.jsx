@@ -5,6 +5,32 @@ import { useState } from "react";
 const projects = [
 
   {
+  name: "Stock-Price-Prediction",
+  link: "https://github.com/Gaurav2002-developer/Apple-Stock-Price-Prediction",
+  tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn"],
+  idea: "The primary objective of this project is to develop a predictive model that forecasts Apple stock prices for the next 30 days using historical stock data from 2012 to 2019. The model assists investors, traders, and analysts in making informed decisions based on market trends.",
+},
+{
+  name: "Amazon-Web-Scraping-Selenium",
+  link: "https://github.com/Gaurav2002-developer/Amazon-Web-Scraping-Selenium",
+  tech: ["Python", "BeautifulSoup", "Selenium", "CSV"],
+  idea: "A Python-based web scraping project that extracts speaker details such as title, price, and product links from Amazon using BeautifulSoup and Selenium, and stores the data in CSV format for further analysis.",
+},
+{
+  name: "Zomato-Dataset-EDA",
+  link: "https://github.com/Gaurav2002-developer/Zomato-Dataset-EDA",
+  tech: ["Python", "NumPy", "Pandas", "Matplotlib", "Seaborn"],
+  idea: "Performed Exploratory Data Analysis (EDA) on the Zomato dataset using Python libraries like NumPy, Pandas, Matplotlib, and Seaborn to visualize and understand customer behavior and restaurant trends.",
+},
+{
+  name: "Object-Detection",
+  link: "https://github.com/Gaurav2002-developer/Object-Detection",
+  tech: ["Python", "YOLOv8", "OpenCV", "Deep Learning"],
+  idea: "An object detection project using the YOLOv8 model to identify and locate multiple objects within images and videos with high accuracy and efficiency.",
+},
+,
+
+  {
   name: "Freelix",
   link: "https://github.com/Gaurav2002-developer/Freelix",
   tech: ["Supabase", "Python", "Django", "SQL", "Postgres", "React", "CSS"],

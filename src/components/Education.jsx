@@ -13,14 +13,14 @@ const educationData = [
     degree: "Senior Secondary (12th)",
     institution: "GIIS",
     percentage: "76.6%",
-    duration: "08/2024 – 10/2024",
-    location: "Jaipur, India",
+    duration: "05/2020 – 04/2021",
+    location: "Jodhpur, India",
   },
   {
     degree: "Secondary (10th)",
     institution: "GIIS",
     percentage: "76.8%",
-    duration: "04/2020 – 03/2021",
+    duration: "04/2019 – 03/2020",
     location: "Jodhpur, India",
   },
 ];

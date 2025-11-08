@@ -1,14 +1,18 @@
 import { motion } from "framer-motion";
 
 const certificatesData = [
+  
+  "ExcelR Institute: Data Science Program",
   "Infosys Springboard: Basics of Python",
   "IIT Bombay: Python 3.4.3 Training",
-  "Great Learning: Front End Development (HTML/CSS)",
+  "Turbotic Online Hackathon: Certificate of Participation",
+  "Great Learning: Front-End Development (HTML/CSS)",
   "Simplilearn: Introduction to NumPy",
   "Skill Course: Power BI Micro Course",
-  "Cisco Networking Academy Certificates (Ideathon)",
-  "HP Life: Data Science & Analytics",
-  "Udemy: Learn PHP and MySQL for Web Application/Development",
+  "Cisco Networking Academy: Ideathon Certificate",
+  "HP Life: Data Science and Analytics",
+  "Udemy: Learn PHP and MySQL for Web Application Development",
+
 ];
 
 const cardVariants = {
