@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const skillsData = [
   {
   category: "Programming Languages",
-  skills: ["Python", "JavaScript", "PHP"],
+  skills: ["Python", "R" , "JavaScript", "PHP"],
 },
 {
   category: "Data Science & ML",
