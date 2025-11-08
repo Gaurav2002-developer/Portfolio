@@ -12,7 +12,7 @@ const projects = [
 },
 {
   name: "Amazon-Web-Scraping-Selenium",
-  link: "https://github.com/Gaurav2002-developer/Amazon-Web-Scraping-Selenium",
+  link: "https://github.com/Gaurav2002-developer/Amazon-Web-Scraping-Selenium-",
   tech: ["Python", "BeautifulSoup", "Selenium", "CSV"],
   idea: "A Python-based web scraping project that extracts speaker details such as title, price, and product links from Amazon using BeautifulSoup and Selenium, and stores the data in CSV format for further analysis.",
 },
