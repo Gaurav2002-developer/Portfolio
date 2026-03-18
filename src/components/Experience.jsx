@@ -3,7 +3,27 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
-    role: "Data Engineer",
+  role: "Junior Data Engineer",
+  company: "Merck",
+  time: "Jan 2026 – Present",
+  points: [
+    "Building and maintaining scalable data pipelines using Python and SQL for efficient data processing and transformation.",
+    "Utilizing Palantir Foundry to design and manage ETL workflows for structured and unstructured data.",
+    "Collaborating with cross-functional teams to ensure data reliability, consistency, and availability across systems.",
+  ],
+},
+  {
+  role: "Data Scientist Intern",
+  company: "Ai Variant",
+  time: "Sept 2025 – Dec 2025",
+  points: [
+    "Developed a machine learning model to analyze historical stock market data and predict price trends using Python.",
+    "Performed data preprocessing, feature engineering, and exploratory data analysis (EDA) to improve model accuracy.",
+    "Evaluated model performance using various metrics and optimized results through iterative experimentation.",
+  ],
+},
+  {
+    role: "Data Engineer Intern",
     company: "Tackit Analytics",
     time: "May 2025 – Aug 2025",
     points: [
@@ -13,7 +33,7 @@ const experiences = [
     ],
   },
   {
-    role: "Python Developer",
+    role: "Python Developer Intern",
     company: "Octanet Services",
     time: "Sep 2024 – Oct 2024",
     points: [
@@ -25,7 +45,7 @@ const experiences = [
     ],
   },
   {
-    role: "Web Developer",
+    role: "Web Developer Intern",
     company: "CodSoft",
     time: "Mar 2024 – May 2024",
     points: [
@@ -49,65 +69,73 @@ const cardVariants = {
 const Experience = () => {
   return (
     <section
-      id="experience"
-      className="mt-12 py-16 border-t border-white/10 text-white font-outfit"
+  id="experience"
+  className="mt-12 py-16 border-t border-[var(--color-border)] text-[var(--color-text)] font-outfit"
+>
+  <div className="max-w-6xl mx-auto px-6">
+    
+    {/* Section Title */}
+    <motion.h2
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="text-2xl sm:text-3xl lg:text-4xl text-center font-bold mb-12 text-[var(--color-text)]"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Section Title */}
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-5xl lg:text-6xl text-center font-bold tracking-wide mb-12"
+      Professional Experience
+    </motion.h2>
+
+    {/* Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {experiences.map((exp, i) => (
+        <motion.div
+          key={exp.company}
+          custom={i}
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          whileHover={{
+            y: -10,
+            scale: 1.03,
+            boxShadow: "0px 10px 25px rgba(0,0,0,0.15)",
+          }}
+          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl shadow-md p-8 flex flex-col text-left transition-all duration-300 relative"
         >
-          Professional Experience
-        </motion.h2>
+          
+          {/* Role */}
+          <div className="flex items-center gap-3 mb-4">
+            <Briefcase className="w-6 h-6 text-black" />
+            <h3 className="text-xl font-semibold text-[var(--color-text)]">
+              {exp.role}{" "}
+              <span className="text-[var(--color-muted)]">
+                | {exp.company}
+              </span>
+            </h3>
+          </div>
 
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {experiences.map((exp, i) => (
-            <motion.div
-              key={exp.company}
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ y: -10, scale: 1.03, boxShadow: "0px 10px 25px rgba(0,0,0,0.4)" }}
-              className="bg-[#0a0a0a] border border-white/20 rounded-2xl shadow-lg p-8 flex flex-col text-left transition-all duration-300 relative"
-            >
-              {/* Role & Company */}
-              <div className="flex items-center gap-3 mb-4">
-                <Briefcase className="w-6 h-6 text-blue-400" />
-                <h3 className="text-xl font-semibold">
-                  {exp.role}{" "}
-                  <span className="text-neutral-400">| {exp.company}</span>
-                </h3>
-              </div>
+          {/* Points */}
+          <ul className="list-disc list-inside space-y-2 text-[var(--color-text)] text-sm leading-relaxed mb-12">
+            {exp.points.map((point, idx) => (
+              <li key={idx}>{point}</li>
+            ))}
+          </ul>
 
-              {/* Experience Points */}
-              <ul className="list-disc list-inside space-y-2 text-neutral-300 text-sm leading-relaxed mb-12">
-                {exp.points.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </ul>
-
-              {/* Time at Bottom Center */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm font-medium text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full shadow-md"
-              >
-                {exp.time}
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+          {/* Time */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm font-medium text-black bg-gray-200 px-3 py-1 rounded-full shadow-sm"
+          >
+            {exp.time}
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
   );
 };
 

@@ -29,147 +29,133 @@ const ContactForm = () => {
 
   return (
     <section
-      id="contact"
-      className="mt-6 py-16 border-t border-white/10 text-white font-[Outfit]"
+  id="contact"
+  className="mt-6 py-16 border-t border-[var(--color-border)] text-[var(--color-text)] font-[Outfit]"
+>
+  <div className="max-w-4xl mx-auto px-6">
+    
+    {/* Heading (match Projects size) */}
+    <motion.h2
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 text-[var(--color-text)]"
     >
-      <div className="max-w-4xl mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-4xl font-bold text-center mb-4"
+      Get in Touch With Me
+    </motion.h2>
+
+    <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.1, duration: 0.5 }}
+      className="text-center text-[var(--color-muted)] mb-10 max-w-2xl mx-auto"
+    >
+      Or share your brilliant ideas from your extraordinary mind with me.
+    </motion.p>
+
+    <AnimatePresence mode="wait">
+      {!isSubmitted ? (
+        <motion.form
+          key="form"
+          ref={form}
+          onSubmit={sendEmail}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="bg-[var(--color-surface)] p-6 sm:p-8 rounded-2xl shadow-md space-y-6 border border-[var(--color-border)]"
         >
-          Get in Touch With Me
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-          className="text-center text-neutral-400 mb-10 max-w-2xl mx-auto"
-        >
-          Or share your brilliant ideas from your extraordinary mind with me.
-        </motion.p>
-
-        <AnimatePresence mode="wait">
-          {!isSubmitted ? (
-            <motion.form
-              key="form"
-              ref={form}
-              onSubmit={sendEmail}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-              className="bg-[#0a0a0a]/80 backdrop-blur p-6 sm:p-8 rounded-2xl shadow-lg space-y-6"
-            >
-              {/* Name + Email row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div whileHover={{ scale: 1.02 }}>
-                  <label htmlFor="name" className="block text-neutral-300 mb-2">
-                    Name
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.02, boxShadow: "0 0 10px #fff3" }}
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    placeholder="Enter your name"
-                    className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-white"
-                  />
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.02 }}>
-                  <label htmlFor="email" className="block text-neutral-300 mb-2">
-                    Email
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.02, boxShadow: "0 0 10px #fff3" }}
-                    id="email"
-                    name="user_email"
-                    type="email"
-                    required
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-white"
-                  />
-                </motion.div>
-              </div>
-
-              <motion.div whileHover={{ scale: 1.02 }}>
-                <label htmlFor="phone" className="block text-neutral-300 mb-2">
-                  Phone Number
-                </label>
-                <motion.input
-                  whileFocus={{ scale: 1.02, boxShadow: "0 0 10px #fff3" }}
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="Enter your phone number"
-                  className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-              </motion.div>
-
-              <motion.div whileHover={{ scale: 1.01 }}>
-                <label htmlFor="message" className="block text-neutral-300 mb-2">
-                  Message
-                </label>
-                <motion.textarea
-                  whileFocus={{ scale: 1.01, boxShadow: "0 0 10px #fff3" }}
-                  id="message"
-                  name="message"
-                  rows="4"
-                  required
-                  placeholder="Write your message here..."
-                  className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-              </motion.div>
-
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.08, rotate: -1 }}
-                whileTap={{ scale: 0.95, rotate: 0 }}
-                className="w-full bg-gradient-to-r from-white to-neutral-300 text-black py-3 rounded-lg font-semibold transition shadow-md hover:shadow-xl"
-              >
-                Send Message
-              </motion.button>
-            </motion.form>
-          ) : (
-            <motion.div
-              key="thankyou"
-              initial={{ opacity: 0, scale: 0.7, rotate: -10 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                rotate: 0,
-                transition: { type: "spring", stiffness: 120 },
-              }}
-              exit={{ opacity: 0 }}
-              className="bg-white-600/90 p-10 rounded-2xl shadow-lg text-center relative overflow-hidden"
-            >
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-2xl font-bold mb-2"
-              >
-                I will reach you soon !
-              </motion.h3>
-              {/* <motion.p
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-white/90"
-              >
-                ....................
-              </motion.p> */}
+          
+          {/* Name + Email */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <motion.div whileHover={{ scale: 1.02 }}>
+              <label className="block text-[var(--color-text)] mb-2">
+                Name
+              </label>
+              <motion.input
+                whileFocus={{ scale: 1.02 }}
+                name="name"
+                type="text"
+                required
+                placeholder="Enter your name"
+                className="w-full px-4 py-3 rounded-lg bg-white text-black border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-black"
+              />
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </section>
+
+            <motion.div whileHover={{ scale: 1.02 }}>
+              <label className="block text-[var(--color-text)] mb-2">
+                Email
+              </label>
+              <motion.input
+                whileFocus={{ scale: 1.02 }}
+                name="user_email"
+                type="email"
+                required
+                placeholder="Enter your email"
+                className="w-full px-4 py-3 rounded-lg bg-white text-black border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </motion.div>
+
+          </div>
+
+          {/* Phone */}
+          <motion.div whileHover={{ scale: 1.02 }}>
+            <label className="block text-[var(--color-text)] mb-2">
+              Phone Number
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              name="phone"
+              type="tel"
+              placeholder="Enter your phone number"
+              className="w-full px-4 py-3 rounded-lg bg-white text-black border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-black"
+            />
+          </motion.div>
+
+          {/* Message */}
+          <motion.div whileHover={{ scale: 1.01 }}>
+            <label className="block text-[var(--color-text)] mb-2">
+              Message
+            </label>
+            <motion.textarea
+              whileFocus={{ scale: 1.01 }}
+              name="message"
+              rows="4"
+              required
+              placeholder="Write your message here..."
+              className="w-full px-4 py-3 rounded-lg bg-white text-black border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-black"
+            />
+          </motion.div>
+
+          {/* Button */}
+          <motion.button
+            type="submit"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-full bg-black text-white py-3 rounded-lg font-semibold transition hover:bg-gray-800 shadow-sm"
+          >
+            Send Message
+          </motion.button>
+        </motion.form>
+      ) : (
+        <motion.div
+          key="thankyou"
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          className="bg-[var(--color-surface)] p-10 rounded-2xl shadow-md text-center border border-[var(--color-border)]"
+        >
+          <h3 className="text-2xl font-bold mb-2 text-[var(--color-text)]">
+            I will reach you soon!
+          </h3>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+</section>
   );
 };
 

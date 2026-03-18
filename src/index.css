@@ -9,27 +9,58 @@ html {
 }
 
 :root {
-  /* 🎨 Softer dark theme colors */
-  --color-light: #eaeaea;   /* off-white text */
-  --color-dark: #1a1a2e;    /* charcoal dark background */
+  /* 🎨 White Theme */
+  --color-bg: #ffffff;          /* white background */
+  --color-surface: #f3f4f6;     /* light grey (navbar/cards) */
+  --color-text: #0a0a0a;        /* black text */
+  --color-muted: #6b7280;       /* grey text */
+  --color-border: #e5e7eb;      /* light border */
 
   font-family: "Outfit", sans-serif;
-  background-color: var(--color-dark);
-  color: var(--color-light);
-
-  /* 🔠 Global font scaling */
-  font-size: 16px;          /* base size */
+  font-size: 16px;
 }
 
 body {
-  @apply bg-[var(--color-dark)] text-[var(--color-light)];
+  @apply bg-[var(--color-bg)] text-[var(--color-text)];
   font-family: "Outfit", sans-serif;
-  line-height: 1.6;         /* better readability */
+  line-height: 1.6;
 }
 
-/* Optional: headings refinement */
+/* 🔠 Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Outfit", sans-serif;
   font-weight: 700;
-  color: var(--color-light);
+  color: var(--color-text);
+}
+
+/* 🧭 Topbar / Navbar (greyish look) */
+.navbar {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+/* ✨ Optional: cards / sections */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+/* 🔘 Buttons (clean black-white style) */
+.btn {
+  background-color: white;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #d4d4d4;
+}
+
+/* 📝 Muted text */
+.text-muted {
+  color: var(--color-muted);
 }

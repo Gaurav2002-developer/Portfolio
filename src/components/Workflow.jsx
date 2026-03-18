@@ -98,17 +98,16 @@ const projects = [
 const ProjectsSection = () => {
   const [showMore, setShowMore] = useState(false);
 
-  // Show only 5 projects initially
   const visibleProjects = showMore ? projects : projects.slice(0, 5);
 
   return (
     <div
       id="projects"
-      className="flex flex-col items-center mt-16 lg:mt-24 px-6 text-center"
+      className="flex flex-col items-center mt-16 lg:mt-24 px-6 text-center text-[var(--color-text)]"
     >
       {/* Section Title */}
       <motion.h2
-        className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-10"
+        className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-text)] mb-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -121,27 +120,39 @@ const ProjectsSection = () => {
         {visibleProjects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-neutral-900 rounded-2xl p-6 border border-neutral-700 shadow-md shadow-black hover:shadow-lg hover:shadow-white/20 transition flex flex-col items-start text-left"
+            className="bg-[var(--color-surface)] rounded-2xl p-6 border border-[var(--color-border)] shadow-md hover:shadow-lg transition flex flex-col items-start text-left"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{
+              scale: 1.03,
+              boxShadow: "0px 10px 25px rgba(0,0,0,0.1)",
+            }}
           >
-            <h3 className="text-lg sm:text-xl font-semibold text-white mb-3">
+            {/* Project Title */}
+            <h3 className="text-lg sm:text-xl font-semibold text-[var(--color-text)] mb-3">
               {project.name}
             </h3>
-            <p className="text-sm text-neutral-400 mb-3">
-              <span className="font-semibold text-neutral-300">Tech:</span>{" "}
+
+            {/* Tech Stack */}
+            <p className="text-sm text-[var(--color-muted)] mb-3">
+              <span className="font-semibold text-[var(--color-text)]">
+                Tech:
+              </span>{" "}
               {project.tech.join(", ")}
             </p>
-            <p className="text-sm text-neutral-400 mb-4 leading-relaxed">
+
+            {/* Description */}
+            <p className="text-sm text-[var(--color-muted)] mb-4 leading-relaxed">
               {project.idea}
             </p>
+
+            {/* Button */}
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-xl font-medium shadow-md hover:bg-neutral-200 transition self-center mt-auto"
+              className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-xl font-medium shadow-sm hover:bg-gray-800 transition self-center mt-auto"
             >
               <Github className="w-5 h-5" />
               GitHub
@@ -154,7 +165,7 @@ const ProjectsSection = () => {
       {projects.length > 5 && (
         <motion.button
           onClick={() => setShowMore(!showMore)}
-          className="mt-8 px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-xl hover:bg-white hover:text-black transition"
+          className="mt-8 px-6 py-3 bg-transparent border-2 border-[var(--color-border)] text-[var(--color-text)] font-medium rounded-xl hover:bg-black hover:text-white transition"
           whileHover={{ scale: 1.05 }}
         >
           {showMore ? "Show Less" : "Show More"}
@@ -163,5 +174,4 @@ const ProjectsSection = () => {
     </div>
   );
 };
-
 export default ProjectsSection;
