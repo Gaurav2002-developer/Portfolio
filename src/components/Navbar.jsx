@@ -27,47 +27,49 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 py-4 backdrop-blur-lg border-b border-[var(--color-border)] text-[var(--color-text)]">
+    <nav className="sticky top-0 z-50 py-4 backdrop-blur-lg border-b border-[var(--color-border)] bg-[var(--color-surface)]/90">
       
-      <div className="container mx-auto flex justify-center items-center relative px-4">
+      <div className="max-w-6xl mx-auto flex justify-between items-center px-4">
         
+        {/* Logo / Name */}
+        <h1 className="text-lg font-bold text-black">
+          🚀✨
+        </h1>
+
         {/* Desktop Nav */}
-        <ul className="hidden lg:flex space-x-12 font-semibold text-lg text-[var(--color-muted)]">
+        <ul className="hidden lg:flex space-x-10 font-medium text-[var(--color-muted)]">
           {navItems.map((item, index) => (
             <li key={index} className="group relative">
               <a
                 href={item.href}
-                className="transition-all duration-300 hover:text-white"
+                className="transition-all duration-300 hover:text-black"
               >
                 {item.label}
               </a>
 
-              {/* underline animation */}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+              {/* underline */}
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
             </li>
           ))}
         </ul>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden absolute right-4 text-white">
-          <button
-            onClick={toggleNavbar}
-            className="transition-transform duration-300 hover:rotate-90"
-          >
-            {mobileDrawerOpen ? <X size={30} /> : <Menu size={30} />}
+        <div className="lg:hidden text-black">
+          <button onClick={toggleNavbar}>
+            {mobileDrawerOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Nav */}
       {mobileDrawerOpen && (
-        <div className="fixed inset-0 z-40 bg-black/95 flex flex-col justify-center items-center space-y-10 text-2xl font-semibold">
+        <div className="fixed inset-0 z-40 bg-white flex flex-col justify-center items-center space-y-8 text-xl font-semibold text-black">
           {navItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="transition-all duration-300 hover:text-white"
               onClick={toggleNavbar}
+              className="hover:text-gray-600 transition"
             >
               {item.label}
             </a>

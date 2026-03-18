@@ -43,7 +43,7 @@ const HeroSection = () => {
         transition={{ delay: 0.7 }}
         className="text-sm text-[var(--color-muted)] mt-3"
       >
-        Let’s build something extraordinary 🚀
+        Let’s build something extraordinary 💡
       </motion.p>
     </div>
   );

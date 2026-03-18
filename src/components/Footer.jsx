@@ -60,7 +60,7 @@ const Footer = () => {
 
           {/* Resume */}
           <a
-            href="https://drive.google.com/file/d/1_MqymGVJGQVjBGtCOk_gMyUx-rOMoOcp/view?usp=sharing"
+            href="https://drive.google.com/file/d/1F2uUuvaiHWC1kzrWEjyVWSwIrKnwXMFr/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-lg bg-black text-white hover:bg-gray-800 text-sm font-medium transition-colors"
